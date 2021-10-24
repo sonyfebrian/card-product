@@ -123,10 +123,10 @@ export default function Product() {
                       );
                     })}
                     <div className="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800">
-                      <h3 className="py-2 font-bold truncate tracking-wide text-center text-gray-800 uppercase dark:text-white">
+                      <h3 className="py-2 px-3 font-bold truncate tracking-wide text-center text-gray-800 uppercase dark:text-white">
                         {list.name}
                       </h3>
-                      <div className="flex items-center justify-between px-3 py-o bg-gray-200 dark:bg-gray-700">
+                      <div className="flex items-center justify-between px-3  py-o bg-gray-200 dark:bg-gray-700">
                         <span className="font-bold text-price-color dark:text-gray-200">
                         $ {list.sell_price}
                         </span>

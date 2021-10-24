@@ -73,11 +73,9 @@ export default function DetailProduct() {
                 <h1 className="title-font font-medium text-3xl mb-1 text-gray-900">
                 {list.name}
                 </h1>
-               
                 {/* <div className="leading-relaxed text-sm">
                 Dijual oleh: {list.SpreeStore.store_name}
                 </div> */}
-              
                 <div className="text-price-color font-bold">
                  $ {list.sell_price}
                 </div>
