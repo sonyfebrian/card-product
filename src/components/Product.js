@@ -10,8 +10,7 @@ export default function Product() {
   const [query, setQuery] = useState("");
  
 
-  const url =
-    "https://apis-dev.aspenku.com/product/thumbnail/163089780061.jpeg";
+  
 
   const fuse = new Fuse(product, {
     keys: ["name"],
