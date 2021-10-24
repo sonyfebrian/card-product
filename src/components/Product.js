@@ -14,6 +14,7 @@ export default function Product() {
 
   const fuse = new Fuse(product, {
     keys: ["name"],
+    threshold: 0.4,
     includeScore: true,
   });
 
