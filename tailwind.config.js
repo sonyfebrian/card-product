@@ -6,6 +6,20 @@ module.exports = {
       colors: {
         "price-color": "#F57224"
       },
+      width: {
+        '600': '600px'
+
+      },
+      height: {
+
+        sm: '300px',
+ 
+        md: '16px',
+ 
+        lg: '24px',
+ 
+        xl: '48px',
+       }
     },
   },
   variants: {

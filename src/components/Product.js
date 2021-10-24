@@ -8,6 +8,7 @@ export default function Product() {
   const [product, setProduct] = useState([]);
   const [active, setActive] = useState(false);
   const [query, setQuery] = useState("");
+  const BASE_URL = "https://apis-dev.aspenku.com";
  
 
   
@@ -19,8 +20,6 @@ export default function Product() {
   });
 
   const results = fuse.search(query);
-  console.log("result", results);
-
   const productResults = query ? results.map((produk) => produk.item) : product;
 
   const handleClick = () => {
@@ -45,7 +44,6 @@ export default function Product() {
       .then((data) => data.json())
       .then((result) => {
         setProduct(result.data.rows);
-        console.log(result.data.rows);
       });
   }, []);
 
@@ -108,16 +106,19 @@ export default function Product() {
               return (
                 <div key={i} className="lg:w-1/4 md:w-1/2 p-4 w-full">
                   <div className="flex flex-col items-center justify-center max-w-sm mx-auto">
-                    {[list.SpreeProductImages.filter].map((tes, i) => {
+                  
+                    {list.SpreeProductImages.slice(0,1).map((tes, i) => {
                       return (
                         <div
                           key={i}
                           className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
                         >
+                          
                           <img
-                            src={tes.main_image}
+                            src={BASE_URL + tes.main_image}
                             alt={tes.alternative_text}
-                            className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
+                            
+                            className="w-full h-64 bg-gray-300 bg-center text-center bg-cover rounded-lg shadow-md"
                           />
                         </div>
                       );
@@ -126,14 +127,11 @@ export default function Product() {
                       <h3 className="py-2 px-3 font-bold truncate tracking-wide text-center text-gray-800 uppercase dark:text-white">
                         {list.name}
                       </h3>
-                      <div className="flex items-center justify-between px-3  py-o bg-gray-200 dark:bg-gray-700">
+                      <div className="flex items-center justify-between px-3  py-2 bg-gray-200 dark:bg-gray-700">
                         <span className="font-bold text-price-color dark:text-gray-200">
-                        $ {list.sell_price}
-                        </span>
-                      </div>
-                      <div className="flex items-center justify-between px-3 py-0 pb-1.5 bg-gray-200 dark:bg-gray-700">
-                        <span className="font-bold text-gray-800 dark:text-gray-200">
+                        $ {list.sell_price} / <span className="text-black text-xs  font-light dark:text-gray-200">
                          {list.unit_measure}
+                        </span>
                         </span>
                         <Link to={`/detail-produk?permalink=${list.permalink}`}>
                           <button
@@ -143,7 +141,6 @@ export default function Product() {
                           </button>
                         </Link>
                       </div>
-
                     </div>
                   </div>
                 </div>
