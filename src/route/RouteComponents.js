@@ -4,13 +4,15 @@ import Home from '../pages/Home'
 import DetailProduct from '../components/DetailProduct'
 
 export class RouteComponent extends Component {
+
+    
     render() {
         return (
             <Fragment>
             <Router>
                     <Switch>
                         <Route path="/" exact component={Home} />
-                        <Route path="/detail-product" component={DetailProduct} />
+                        <Route path="/detail-produk" component={DetailProduct} />
                     </Switch>
             </Router>
             </Fragment>
